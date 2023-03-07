@@ -1,5 +1,3 @@
-
-
 const eqArrays = function (array1, array2) {
   let perfectScore = array1.length;
   let countScore = 0;
@@ -23,16 +21,23 @@ const assertArraysEqual = function(array1, array2) {
   }
 };
 
-// const assertEqual = function(actual1, expected) {
-//   if (actual1 === expected) {
-//     console.log(`🐢🐢🐢Assertion Passed: ${actual1} === ${expected}`);
-//   } else {
-//     console.log(`🦑🦑🦑Assertion Failed: ${actual1} !== ${expected}`);
-//   }
-// };
+const flatten = function(array) {
+  flattenedArrayBuffer = [];
+  for (i = 0; i < array.length; i++) {
+    if (!Array.isArray(array[i])) {
+      flattenedArrayBuffer.push(array[i]);
+    }
+    if (Array.isArray(array[i])) {
+      for (let item of array[i]) {
+        flattenedArrayBuffer.push(item);
+      }
+    }
+  }
+  return flattenedArrayBuffer;
+}
 
-//TESTCODE
+//testing
 
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([2, 3, 4], [1, 2, 3]);
-assertArraysEqual([], []);
+console.log(flatten([1, 2, [3, 4], 5, [6]]))// => [1, 2, 3, 4, 5, 6]
+console.log(flatten([]))// => []
+console.log(flatten([1, 2, [3, 4, 'elephant'], 5, [6]]))// => [1, 2, 3, 4, 'elephant', 5, 6]
