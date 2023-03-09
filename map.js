@@ -45,3 +45,5 @@ console.log(results2);
 
 const results3 = map(words, word => `${word} ${word} ${word}`);
 console.log(results3);
+
+const results4
