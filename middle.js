@@ -8,11 +8,15 @@ const middle = function(array1) {
     return middleBuffer;
   }
   if (trueMiddle % 1 === 0) {
-    middleBuffer.push(array1[trueMiddle - 1])
-    middleBuffer.push(array1[trueMiddle])
+    middleBuffer.push(array1[trueMiddle - 1]);
+    middleBuffer.push(array1[trueMiddle]);
     return middleBuffer;
   }
   return [array1[trueMiddle - 0.5]];
-}
+};
+
+
+console.log(middle([1, 2, 3]));
+console.log(middle([]));
 
 module.exports = middle;
