@@ -1,10 +1,4 @@
-const assertEqual = function(actual1, expected) {
-  if (actual1 === expected) {
-    console.log(`🐢🐢🐢Assertion Passed: ${actual1} === ${expected}`);
-  } else {
-    console.log(`🦑🦑🦑Assertion Failed: ${actual1} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const findKeyByValue = function(object1, value1) {
   object1Keys = Object.keys(object1)
@@ -17,13 +11,4 @@ const findKeyByValue = function(object1, value1) {
   }
 };
 
-//testing
-
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
-
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
+module.exports = findKeyByValue;
